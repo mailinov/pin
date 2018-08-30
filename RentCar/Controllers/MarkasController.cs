@@ -9,23 +9,22 @@ using RentCar.Models;
 
 namespace RentCar.Controllers
 {
-    public class CarsController : Controller
+    public class MarkasController : Controller
     {
         private readonly RentCarContext _context;
 
-        public CarsController(RentCarContext context)
+        public MarkasController(RentCarContext context)
         {
             _context = context;
         }
 
-        // GET: Cars
+        // GET: Markas
         public async Task<IActionResult> Index()
         {
-            var rentCarContext = _context.Cars.Include(c => c.Marka);
-            return View(await rentCarContext.ToListAsync());
+            return View(await _context.Marka.ToListAsync());
         }
 
-        // GET: Cars/Details/5
+        // GET: Markas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,42 +32,39 @@ namespace RentCar.Controllers
                 return NotFound();
             }
 
-            var cars = await _context.Cars
-                .Include(c => c.Marka)
+            var marka = await _context.Marka
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (cars == null)
+            if (marka == null)
             {
                 return NotFound();
             }
 
-            return View(cars);
+            return View(marka);
         }
 
-        // GET: Cars/Create
+        // GET: Markas/Create
         public IActionResult Create()
         {
-            ViewData["MarkaID"] = new SelectList(_context.Set<Marka>(), "ID", "naziv");
             return View();
         }
 
-        // POST: Cars/Create
+        // POST: Markas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Naziv,ReleaseDate,Model,Cijena,MarkaID")] Cars cars)
+        public async Task<IActionResult> Create([Bind("ID,naziv")] Marka marka)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cars);
+                _context.Add(marka);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MarkaID"] = new SelectList(_context.Set<Marka>(), "ID", "ID", cars.MarkaID);
-            return View(cars);
+            return View(marka);
         }
 
-        // GET: Cars/Edit/5
+        // GET: Markas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,23 +72,22 @@ namespace RentCar.Controllers
                 return NotFound();
             }
 
-            var cars = await _context.Cars.SingleOrDefaultAsync(m => m.ID == id);
-            if (cars == null)
+            var marka = await _context.Marka.SingleOrDefaultAsync(m => m.ID == id);
+            if (marka == null)
             {
                 return NotFound();
             }
-            ViewData["MarkaID"] = new SelectList(_context.Set<Marka>(), "ID", "ID", cars.MarkaID);
-            return View(cars);
+            return View(marka);
         }
 
-        // POST: Cars/Edit/5
+        // POST: Markas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Naziv,ReleaseDate,Model,Cijena,MarkaID")] Cars cars)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,naziv")] Marka marka)
         {
-            if (id != cars.ID)
+            if (id != marka.ID)
             {
                 return NotFound();
             }
@@ -101,12 +96,12 @@ namespace RentCar.Controllers
             {
                 try
                 {
-                    _context.Update(cars);
+                    _context.Update(marka);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CarsExists(cars.ID))
+                    if (!MarkaExists(marka.ID))
                     {
                         return NotFound();
                     }
@@ -117,11 +112,10 @@ namespace RentCar.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MarkaID"] = new SelectList(_context.Set<Marka>(), "ID", "ID", cars.MarkaID);
-            return View(cars);
+            return View(marka);
         }
 
-        // GET: Cars/Delete/5
+        // GET: Markas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,31 +123,30 @@ namespace RentCar.Controllers
                 return NotFound();
             }
 
-            var cars = await _context.Cars
-                .Include(c => c.Marka)
+            var marka = await _context.Marka
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (cars == null)
+            if (marka == null)
             {
                 return NotFound();
             }
 
-            return View(cars);
+            return View(marka);
         }
 
-        // POST: Cars/Delete/5
+        // POST: Markas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cars = await _context.Cars.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Cars.Remove(cars);
+            var marka = await _context.Marka.SingleOrDefaultAsync(m => m.ID == id);
+            _context.Marka.Remove(marka);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CarsExists(int id)
+        private bool MarkaExists(int id)
         {
-            return _context.Cars.Any(e => e.ID == id);
+            return _context.Marka.Any(e => e.ID == id);
         }
     }
 }

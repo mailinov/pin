@@ -13123,8 +13123,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mario Ilinović\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\Korisnik\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13133,20 +13132,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mario Ilinović\\source\\repos\\RentCar\\RentCar\\RentCar.csproj",
+      "projectUniqueName": "C:\\Users\\Korisnik\\Source\\Repos\\pin\\RentCar\\RentCar.csproj",
       "projectName": "RentCar",
-      "projectPath": "C:\\Users\\Mario Ilinović\\source\\repos\\RentCar\\RentCar\\RentCar.csproj",
-      "packagesPath": "C:\\Users\\Mario Ilinović\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mario Ilinović\\source\\repos\\RentCar\\RentCar\\obj\\",
+      "projectPath": "C:\\Users\\Korisnik\\Source\\Repos\\pin\\RentCar\\RentCar.csproj",
+      "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Korisnik\\Source\\Repos\\pin\\RentCar\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Mario Ilinović\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13169,18 +13166,18 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.All": {
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
-            "version": "[2.0.5, )"
+            "version": "2.0.2"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0.0",
             "autoReferenced": true
           },
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+          "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "[2.0.2, )"
+            "version": "2.0.5"
           }
         },
         "imports": [

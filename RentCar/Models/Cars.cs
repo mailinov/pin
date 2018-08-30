@@ -12,5 +12,8 @@ namespace RentCar.Models
         public DateTime ReleaseDate { get; set; }
         public string Model { get; set; }
         public decimal Cijena { get; set; }
+
+        public int MarkaID { get; set; }
+        public Marka Marka { get; set; }
     }
 }

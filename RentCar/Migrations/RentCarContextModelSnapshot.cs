@@ -27,6 +27,8 @@ namespace RentCar.Migrations
 
                     b.Property<decimal>("Cijena");
 
+                    b.Property<int>("MarkaID");
+
                     b.Property<string>("Model");
 
                     b.Property<string>("Naziv");
@@ -35,7 +37,29 @@ namespace RentCar.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("MarkaID");
+
                     b.ToTable("Cars");
+                });
+
+            modelBuilder.Entity("RentCar.Models.Marka", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("naziv");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Marka");
+                });
+
+            modelBuilder.Entity("RentCar.Models.Cars", b =>
+                {
+                    b.HasOne("RentCar.Models.Marka", "Marka")
+                        .WithMany()
+                        .HasForeignKey("MarkaID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

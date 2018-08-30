@@ -1,0 +1,11 @@
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\bin\Debug\netcoreapp2.0\RentCar.deps.json
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\bin\Debug\netcoreapp2.0\RentCar.runtimeconfig.json
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\bin\Debug\netcoreapp2.0\RentCar.runtimeconfig.dev.json
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\bin\Debug\netcoreapp2.0\RentCar.dll
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\bin\Debug\netcoreapp2.0\RentCar.pdb
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\obj\Debug\netcoreapp2.0\RentCar.csprojResolveAssemblyReference.cache
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\obj\Debug\netcoreapp2.0\RentCar.csproj.CoreCompileInputs.cache
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\obj\Debug\netcoreapp2.0\RentCar.AssemblyInfoInputs.cache
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\obj\Debug\netcoreapp2.0\RentCar.AssemblyInfo.cs
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\obj\Debug\netcoreapp2.0\RentCar.dll
+C:\Users\Mario Ilinović\source\repos\RentCar\RentCar\obj\Debug\netcoreapp2.0\RentCar.pdb
